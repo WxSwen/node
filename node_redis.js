@@ -11,7 +11,7 @@ User.prototype.save = function(fn){
         this.update(fn);
     }
     var user = this;
-    db.incr('user:iss',function(err,id){
+    db.incr('user:ids',function(err,id){       //获取自增id
         if(err) return fn(err);
         user.id = id;
         user.hasPassword(function(err){
@@ -23,9 +23,9 @@ User.prototype.save = function(fn){
 User.prototype.update = function(fn){
     var user = this;
     var id = user.id;
-    db.set('user:id:'+user.name,id,function(err){
+    db.set('user:id:'+user.name,id,function(err){     //redis set集合
         if(err) return fn(err);
-        db.hmset('user:'+id,user,function(err){
+        db.hmset('user:'+id,user,function(err){       //保存
             fn(err);
         });
     })
