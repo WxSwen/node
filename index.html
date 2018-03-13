@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    fuck
+  </body>
+  <script>
+    const es = new EventSource('/message');
+    console.log(es.url);
+    console.log('fuck');
+    es.onmessage = function(e){
+      console.log(e.data); // 打印服务器推送的信息
+    }
+    es.onerror = function(e){// 出错时的回调(网络问题,或者服务下线等都有可能导致出错)
+      console.log(es.readyState);// 出错时readyState===0
+      es.close();// 出错时，chrome浏览器会每隔3秒向服务器重发原请求,直到成功. 因此出错时，可主动断开原连接.
+    }
+  </script>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "thinking",
+  "version": "1.0.0",
+  "description": "随便写点方法，框架思路集合",
+  "main": "EventEmitter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WxSwen/thinking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WxSwen/thinking/issues"
+  },
+  "homepage": "https://github.com/WxSwen/thinking#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "es6-promise-polyfill": "^1.2.0",
+    "express": "^4.16.2",
+    "lcx": "^1.0.0",
+    "live-server": "^1.2.0",
+    "parcel-bundler": "^1.5.1"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
